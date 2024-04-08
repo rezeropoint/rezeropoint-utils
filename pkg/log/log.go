@@ -19,7 +19,7 @@ func (s *MyFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 	timestamp := time.Now().Local().Format("2006/01/02 15:04:05")
 	serverNmae := os.Getenv("POD_NAME")
 	if serverNmae == "" {
-		logrus.Fatalln("POD_NAME 环境变量未设置")
+		logrus.Fatalln("POD_NAME 环境变量未设置！")
 	}
 	msg := fmt.Sprintf("[%s] [%s] [%s] %s: %s \n", serverNmae, strings.ToUpper(entry.Level.String()), timestamp, strings.ToUpper(entry.Caller.Function), entry.Message)
 	return []byte(msg), nil
