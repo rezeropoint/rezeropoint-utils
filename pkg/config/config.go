@@ -6,10 +6,10 @@ import (
 	"github.com/spf13/viper"
 )
 
-func Init(fileAddress string) {
+func Init() {
 	// 初始化配置文件
 	// 设定要读取的配置文件的路径
-	viper.SetConfigFile("./configs/" + fileAddress)
+	viper.SetConfigFile("./configs/config.yaml")
 	if err := viper.ReadInConfig(); err != nil {
 		logrus.Fatalln("读取配置文件出错!", err)
 	}
