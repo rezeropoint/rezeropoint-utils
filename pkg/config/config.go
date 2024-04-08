@@ -11,11 +11,11 @@ func InitConfig(fileAddress string) {
 	// 设定要读取的配置文件的路径
 	viper.SetConfigFile("./configs/" + fileAddress)
 	if err := viper.ReadInConfig(); err != nil {
-		logrus.Fatalln("读取配置文件出错", err)
+		logrus.Fatalln("读取配置文件出错!", err)
 	}
 
 	// 配置文件找到并成功解析
-	logrus.Infoln("载入配置文件成功")
+	logrus.Infoln("载入配置文件成功!")
 	// 实时读取配置文件
 	viper.WatchConfig()
 	viper.OnConfigChange(func(e fsnotify.Event) {
