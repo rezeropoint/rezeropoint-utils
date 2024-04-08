@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/viper"
 )
 
-func InitConfig(fileAddress string) {
+func Init(fileAddress string) {
 	// 初始化配置文件
 	// 设定要读取的配置文件的路径
 	viper.SetConfigFile("./configs/" + fileAddress)

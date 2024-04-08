@@ -25,7 +25,7 @@ func (s *MyFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 	return []byte(msg), nil
 }
 
-func InitLog() {
+func Init() {
 	// 初始化日志
 	logrus.SetReportCaller(true)
 	// 设置日志格式
